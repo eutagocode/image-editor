@@ -39,6 +39,12 @@ const compress = (pathInput, pathOutput) => {
             console.log("-------------");
         },
     );
+
+    fs.unlink(pathInput, (error) => {
+        if (error) throw error;
+
+        console.log(pathInput, "apagado");
+    });
 };
 
 resize(path, width);
